@@ -77,11 +77,18 @@ const API_URL = process.env.REACT_APP_API_URL || "https://wonderlost-zerodha-clo
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-4">
               {!auth.isAuthed ? (
-                <li className="nav-item">
-                  <Link className="nav-link text-secondary" to="/signup">
-                    Login
-                  </Link>
-                </li>
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link text-secondary" to="/signup?mode=signup">
+                      Register
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link text-secondary" to="/signup?mode=login">
+                      Login
+                    </Link>
+                  </li>
+                </>
               ) : (
                 <li className="nav-item">
                   <button
