@@ -16,7 +16,7 @@ const Menu = () => {
 
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
-  const LANDING_URL = process.env.REACT_APP_LANDING_URL || "http://localhost:3001";
+  const LANDING_URL = "https://wonderlost.onrender.com";
 
   return (
     <div className="menu-container">
@@ -90,7 +90,7 @@ const Menu = () => {
             </Link>
           </li>
           <li>
-            <a style={{ textDecoration: "none" }} href={LANDING_URL}>
+            <a style={{ textDecoration: "none" }} href={LANDING_URL} target="_self" rel="noopener">
               <p className={menuClass}>Back to Home</p>
             </a>
           </li>
