@@ -92,12 +92,14 @@ const API_URL = process.env.REACT_APP_API_URL || "https://wonderlost-zerodha-clo
                   </button>
                 </li>
               )}
-              {/* Dashboard link: open in new tab to bypass SPA/nav issues */}
-              <li className="nav-item d-flex align-items-center">
-                <a className="btn btn-primary" href={DASHBOARD_URL} target="_blank" rel="noopener noreferrer">
-                  Dashboard
-                </a>
-              </li>
+              {/* Dashboard visible only when authenticated */}
+              {auth.isAuthed && (
+                <li className="nav-item d-flex align-items-center">
+                  <a className="btn btn-primary" href={DASHBOARD_URL} target="_blank" rel="noopener noreferrer">
+                    Dashboard
+                  </a>
+                </li>
+              )}
 
               <li className="nav-item">
                 <Link className="nav-link text-secondary" to="/about">
