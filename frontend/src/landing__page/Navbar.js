@@ -3,6 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 function Navbar() {
   const [auth, setAuth] = useState({ isAuthed: false, user: null });
   const location = useLocation();
+  const handleOpenDashboard = () => {
+    window.location.href = DASHBOARD_URL;
+  };
 
   const DASHBOARD_URL =
     (typeof import.meta !== "undefined" &&
@@ -10,12 +13,15 @@ function Navbar() {
       import.meta.env &&
       import.meta.env.VITE_DASHBOARD_URL) ||
     process.env.REACT_APP_DASHBOARD_URL ||
-    "http://localhost:3000";
+    "https://wonderlost-zerodha-clonedashboard.onrender.com";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL || "https://wonderlost-zerodha-clonebackend.onrender.com";
 
 
   useEffect(() => {
+    // Debug: verify which URL we will navigate to in production
+    try { console.log("DASHBOARD_URL =>", DASHBOARD_URL); } catch {}
+
     const check = async () => {
       try {
         const res = await fetch(`${API_URL}/verify`, {
@@ -86,17 +92,11 @@ const API_URL = process.env.REACT_APP_API_URL;
                   </button>
                 </li>
               )}
-              {/* Dashboard button: enabled only when authenticated */}
+              {/* Dashboard link: open in new tab to bypass SPA/nav issues */}
               <li className="nav-item d-flex align-items-center">
-                {auth.isAuthed ? (
-                  <a className="btn btn-primary" href={DASHBOARD_URL}>
-                    Dashboard
-                  </a>
-                ) : (
-                  <button className="btn btn-outline-secondary" disabled>
-                    Dashboard
-                  </button>
-                )}
+                <a className="btn btn-primary" href={DASHBOARD_URL} target="_blank" rel="noopener noreferrer">
+                  Dashboard
+                </a>
               </li>
 
               <li className="nav-item">
