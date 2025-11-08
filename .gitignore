@@ -1,0 +1,13 @@
+echo "node_modules
+.cache
+dist
+build
+.next
+.DS_Store
+.env" >> .gitignore
+
+node_modules
+.cache
+dist
+build
+.env

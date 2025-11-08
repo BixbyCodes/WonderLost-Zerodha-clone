@@ -1,0 +1,25 @@
+{
+  "name": "zerodha-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm --prefix frontend start\" \"npm --prefix backend start\" \"npm --prefix dashboard start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BixbyCodes/ZerodaClone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/BixbyCodes/ZerodaClone/issues"
+  },
+  "homepage": "https://github.com/BixbyCodes/ZerodaClone#readme",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
