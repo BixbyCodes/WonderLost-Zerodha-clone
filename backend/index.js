@@ -23,10 +23,10 @@ app.use(
       "https://wonderlost.onrender.com",
       "https://wonderlost-zerodha-clonedashboard.onrender.com"
     ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
+
 
 /* ✅ Needed for cookies & JSON */
 app.use(cookieParser());
